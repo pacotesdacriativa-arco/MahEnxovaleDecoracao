@@ -1,0 +1,1975 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mah Enxoval e Decoração</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+:root {
+    --azul: #35bdf2;
+    --azul-escuro: #1598cf;
+    --azul-claro: #e9f9ff;
+    --rosa: #ff78ad;
+    --rosa-claro: #fff0f6;
+    --rosa-forte: #ed4f91;
+    --branco: #ffffff;
+    --texto: #27343d;
+    --cinza: #71808a;
+    --fundo: #f7fbfd;
+    --borda: #e4edf2;
+    --verde: #3dbb82;
+    --sombra: 0 12px 35px rgba(37, 124, 158, .10);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--fundo);
+    color: var(--texto);
+    min-height: 100vh;
+}
+
+button,
+input,
+select {
+    font-family: inherit;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    background: linear-gradient(135deg, #28b7ed, #65cff5);
+    padding: 18px 6%;
+    color: white;
+    box-shadow: 0 4px 20px rgba(25, 151, 204, .18);
+}
+
+.header-content {
+    max-width: 1180px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.logo-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 15px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.08);
+}
+
+.logo-text h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    line-height: 1;
+}
+
+.logo-text span {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    margin-top: 5px;
+    opacity: .92;
+    text-transform: uppercase;
+}
+
+.header-badge {
+    background: rgba(255,255,255,.18);
+    border: 1px solid rgba(255,255,255,.35);
+    padding: 9px 14px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 50px 20px 25px;
+    display: grid;
+    grid-template-columns: 1.25fr .75fr;
+    gap: 30px;
+    align-items: center;
+}
+
+.hero h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(34px, 5vw, 54px);
+    line-height: 1.05;
+    margin-bottom: 17px;
+}
+
+.hero h2 span {
+    color: var(--rosa-forte);
+}
+
+.hero p {
+    color: var(--cinza);
+    max-width: 600px;
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+.hero-card {
+    background: white;
+    border-radius: 28px;
+    padding: 27px;
+    box-shadow: var(--sombra);
+    border: 1px solid var(--borda);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-card::before {
+    content: "";
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    background: var(--rosa-claro);
+    border-radius: 50%;
+    right: -45px;
+    top: -45px;
+}
+
+.hero-card-icon {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.hero-card h3 {
+    margin-bottom: 7px;
+}
+
+.hero-card p {
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* =========================
+   NAV
+========================= */
+
+.nav {
+    max-width: 1180px;
+    margin: 10px auto 25px;
+    padding: 0 20px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.nav button {
+    border: none;
+    background: white;
+    color: var(--cinza);
+    border: 1px solid var(--borda);
+    padding: 11px 17px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: .2s;
+}
+
+.nav button:hover,
+.nav button.active {
+    background: var(--rosa);
+    color: white;
+    border-color: var(--rosa);
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 20px 70px;
+}
+
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+}
+
+.section-title {
+    margin-bottom: 22px;
+}
+
+.section-title small {
+    color: var(--rosa-forte);
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+}
+
+.section-title h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 31px;
+    margin-top: 5px;
+}
+
+.section-title p {
+    color: var(--cinza);
+    margin-top: 6px;
+    font-size: 14px;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.form-card {
+    background: white;
+    border: 1px solid var(--borda);
+    box-shadow: var(--sombra);
+    border-radius: 25px;
+    padding: 28px;
+}
+
+.progress {
+    height: 7px;
+    background: #edf3f6;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 28px;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 25%;
+    background: linear-gradient(90deg, var(--azul), var(--rosa));
+    border-radius: 20px;
+    transition: .3s;
+}
+
+.step {
+    display: none;
+}
+
+.step.active {
+    display: block;
+}
+
+.step-number {
+    color: var(--azul-escuro);
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.step h3 {
+    font-size: 23px;
+    margin-bottom: 7px;
+}
+
+.step-description {
+    color: var(--cinza);
+    font-size: 14px;
+    margin-bottom: 23px;
+}
+
+.options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 13px;
+}
+
+.option {
+    position: relative;
+}
+
+.option input {
+    position: absolute;
+    opacity: 0;
+}
+
+.option label {
+    display: block;
+    border: 2px solid var(--borda);
+    border-radius: 17px;
+    padding: 17px;
+    cursor: pointer;
+    transition: .2s;
+    background: white;
+}
+
+.option label:hover {
+    border-color: var(--azul);
+    transform: translateY(-1px);
+}
+
+.option input:checked + label {
+    border-color: var(--rosa);
+    background: var(--rosa-claro);
+}
+
+.option-icon {
+    font-size: 25px;
+    margin-bottom: 7px;
+}
+
+.option-title {
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.option-subtitle {
+    color: var(--cinza);
+    font-size: 12px;
+    margin-top: 3px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    width: 100%;
+    border: 1px solid var(--borda);
+    padding: 14px;
+    border-radius: 13px;
+    outline: none;
+    font-size: 14px;
+    background: white;
+}
+
+input:focus,
+select:focus {
+    border-color: var(--azul);
+    box-shadow: 0 0 0 3px rgba(53,189,242,.10);
+}
+
+.checkbox-grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 10px;
+}
+
+.check-item {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    border: 1px solid var(--borda);
+    padding: 12px;
+    border-radius: 12px;
+    font-size: 13px;
+}
+
+.check-item input {
+    accent-color: var(--rosa);
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 27px;
+}
+
+.btn {
+    border: none;
+    border-radius: 14px;
+    padding: 14px 21px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--rosa), var(--rosa-forte));
+    color: white;
+    box-shadow: 0 7px 18px rgba(237,79,145,.18);
+}
+
+.btn-secondary {
+    background: var(--azul-claro);
+    color: var(--azul-escuro);
+}
+
+.btn-green {
+    background: var(--verde);
+    color: white;
+}
+
+/* =========================
+   RESULTADO
+========================= */
+
+.result-header {
+    background: linear-gradient(135deg, var(--azul), #68d4f8);
+    color: white;
+    padding: 28px;
+    border-radius: 25px;
+    margin-bottom: 18px;
+}
+
+.result-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.result-header p {
+    font-size: 13px;
+    opacity: .95;
+}
+
+.summary {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 11px;
+    margin-bottom: 20px;
+}
+
+.summary-card {
+    background: white;
+    border: 1px solid var(--borda);
+    border-radius: 17px;
+    padding: 15px;
+}
+
+.summary-card span {
+    display: block;
+    font-size: 10px;
+    color: var(--cinza);
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.summary-card strong {
+    font-size: 14px;
+}
+
+.recommendation-level {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.level {
+    border: 1px solid var(--borda);
+    background: white;
+    padding: 11px 16px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.level.active {
+    background: var(--rosa);
+    color: white;
+    border-color: var(--rosa);
+}
+
+.category {
+    background: white;
+    border: 1px solid var(--borda);
+    border-radius: 21px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(40,100,120,.05);
+}
+
+.category-header {
+    padding: 18px 20px;
+    background: linear-gradient(90deg, var(--rosa-claro), white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.category-header h3 {
+    font-size: 17px;
+}
+
+.category-header span {
+    font-size: 23px;
+}
+
+.items {
+    padding: 7px 20px 14px;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 13px 0;
+    border-bottom: 1px solid #f0f3f5;
+    gap: 15px;
+}
+
+.item:last-child {
+    border-bottom: none;
+}
+
+.item-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.item-check {
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+    background: #e7f9f0;
+    color: var(--verde);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+
+.item-name {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.item-note {
+    display: block;
+    font-size: 11px;
+    color: var(--cinza);
+    margin-top: 2px;
+}
+
+.quantity {
+    background: var(--azul-claro);
+    color: var(--azul-escuro);
+    padding: 7px 10px;
+    border-radius: 9px;
+    font-weight: 800;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.priority-box {
+    background: linear-gradient(135deg, #fff1f7, #edfaff);
+    border-radius: 21px;
+    padding: 22px;
+    margin-top: 20px;
+}
+
+.priority-box h3 {
+    margin-bottom: 14px;
+}
+
+.priority {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(0,0,0,.06);
+}
+
+.priority:last-child {
+    border-bottom: none;
+}
+
+.priority-number {
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+    background: var(--rosa);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+.whatsapp {
+    margin-top: 20px;
+    width: 100%;
+}
+
+/* =========================
+   CONFIGURAÇÕES
+========================= */
+
+.settings-card {
+    background: white;
+    border: 1px solid var(--borda);
+    border-radius: 23px;
+    padding: 25px;
+    margin-bottom: 17px;
+}
+
+.settings-card h3 {
+    margin-bottom: 5px;
+}
+
+.settings-card > p {
+    color: var(--cinza);
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.setting-row {
+    display: grid;
+    grid-template-columns: 1fr 130px;
+    gap: 15px;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f3f5;
+}
+
+.setting-row:last-child {
+    border-bottom: none;
+}
+
+.setting-row span {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.setting-row input {
+    text-align: center;
+}
+
+.info-box {
+    background: var(--azul-claro);
+    color: #3b6575;
+    border-radius: 15px;
+    padding: 15px;
+    font-size: 12px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* =========================
+   RODAPÉ
+========================= */
+
+footer {
+    text-align: center;
+    color: var(--cinza);
+    padding: 20px;
+    font-size: 11px;
+}
+
+footer strong {
+    color: var(--rosa-forte);
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media(max-width: 780px) {
+
+    .header-badge {
+        display: none;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding-top: 35px;
+    }
+
+    .hero-card {
+        display: none;
+    }
+
+    .summary {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media(max-width: 560px) {
+
+    .logo-text h1 {
+        font-size: 20px;
+    }
+
+    .logo-icon {
+        width: 42px;
+        height: 42px;
+    }
+
+    .hero h2 {
+        font-size: 37px;
+    }
+
+    .form-card {
+        padding: 20px;
+        border-radius: 20px;
+    }
+
+    .options,
+    .checkbox-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .summary {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .buttons {
+        flex-direction: column-reverse;
+    }
+
+    .buttons .btn {
+        width: 100%;
+    }
+
+    .setting-row {
+        grid-template-columns: 1fr 90px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="header-content">
+
+        <div class="logo-area">
+            <div class="logo-icon">🛏️</div>
+
+            <div class="logo-text">
+                <h1>Mah Enxoval e Decoração</h1>
+                <span>Consultoria personalizada</span>
+            </div>
+        </div>
+
+        <div class="header-badge">
+            ✨ Seu enxoval planejado
+        </div>
+
+    </div>
+</header>
+
+<section class="hero">
+
+    <div>
+        <h2>
+            Monte seu enxoval
+            <span>sem comprar à toa.</span>
+        </h2>
+
+        <p>
+            Responda algumas perguntas e receba uma sugestão personalizada
+            de itens para cama, banho, mesa e cozinha, de acordo com suas
+            necessidades.
+        </p>
+    </div>
+
+    <div class="hero-card">
+        <div class="hero-card-icon">💗</div>
+
+        <h3>Consultoria personalizada</h3>
+
+        <p>
+            Uma forma simples de descobrir o que comprar primeiro,
+            quais quantidades são ideais e o que pode esperar.
+        </p>
+    </div>
+
+</section>
+
+<nav class="nav">
+
+    <button class="active" onclick="showSection('consultoria', this)">
+        ✨ Nova consultoria
+    </button>
+
+    <button onclick="showSection('resultado', this)">
+        📋 Meu enxoval
+    </button>
+
+    <button onclick="showSection('config', this)">
+        ⚙️ Configurações
+    </button>
+
+</nav>
+
+<main class="container">
+
+<!-- ======================================
+     CONSULTORIA
+======================================= -->
+
+<section id="consultoria" class="section active">
+
+    <div class="section-title">
+        <small>Consultoria</small>
+        <h2>Vamos montar seu enxoval?</h2>
+        <p>Conte um pouco sobre o que você precisa.</p>
+    </div>
+
+    <div class="form-card">
+
+        <div class="progress">
+            <div class="progress-bar" id="progress"></div>
+        </div>
+
+        <!-- STEP 1 -->
+
+        <div class="step active" data-step="1">
+
+            <div class="step-number">01 / 05</div>
+
+            <h3>Primeiro, como podemos te chamar?</h3>
+
+            <p class="step-description">
+                Assim seu planejamento ficará personalizado.
+            </p>
+
+            <div class="form-group">
+                <label>Seu nome</label>
+                <input
+                    type="text"
+                    id="nome"
+                    placeholder="Digite seu nome"
+                >
+            </div>
+
+            <div class="buttons">
+                <span></span>
+
+                <button class="btn btn-primary" onclick="nextStep()">
+                    Continuar →
+                </button>
+            </div>
+
+        </div>
+
+        <!-- STEP 2 -->
+
+        <div class="step" data-step="2">
+
+            <div class="step-number">02 / 05</div>
+
+            <h3>Qual é o seu objetivo?</h3>
+
+            <p class="step-description">
+                Isso ajuda a definir quais itens devem ser priorizados.
+            </p>
+
+            <div class="options">
+
+                <div class="option">
+                    <input type="radio" name="objetivo" id="casa" value="Casa nova">
+                    <label for="casa">
+                        <div class="option-icon">🏠</div>
+                        <div class="option-title">Casa nova</div>
+                        <div class="option-subtitle">Montando tudo do zero</div>
+                    </label>
+                </div>
+
+                <div class="option">
+                    <input type="radio" name="objetivo" id="casamento" value="Casamento">
+                    <label for="casamento">
+                        <div class="option-icon">💍</div>
+                        <div class="option-title">Casamento</div>
+                        <div class="option-subtitle">Preparando o enxoval</div>
+                    </label>
+                </div>
+
+                <div class="option">
+                    <input type="radio" name="objetivo" id="renovacao" value="Renovação">
+                    <label for="renovacao">
+                        <div class="option-icon">✨</div>
+                        <div class="option-title">Renovação</div>
+                        <div class="option-subtitle">Quero renovar o que tenho</div>
+                    </label>
+                </div>
+
+                <div class="option">
+                    <input type="radio" name="objetivo" id="presente" value="Presente">
+                    <label for="presente">
+                        <div class="option-icon">🎁</div>
+                        <div class="option-title">Presente</div>
+                        <div class="option-subtitle">Montando um conjunto</div>
+                    </label>
+                </div>
+
+            </div>
+
+            <div class="buttons">
+                <button class="btn btn-secondary" onclick="prevStep()">
+                    ← Voltar
+                </button>
+
+                <button class="btn btn-primary" onclick="nextStep()">
+                    Continuar →
+                </button>
+            </div>
+
+        </div>
+
+        <!-- STEP 3 -->
+
+        <div class="step" data-step="3">
+
+            <div class="step-number">03 / 05</div>
+
+            <h3>Como é a sua casa?</h3>
+
+            <p class="step-description">
+                Essas informações ajudam a calcular as quantidades.
+            </p>
+
+            <div class="form-group">
+
+                <label>Tamanho da cama principal</label>
+
+                <select id="cama">
+
+                    <option value="Solteiro">Solteiro</option>
+                    <option value="Casal">Casal</option>
+                    <option value="Queen">Queen</option>
+                    <option value="King">King</option>
+
+                </select>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Quantidade de pessoas</label>
+
+                <input
+                    type="number"
+                    id="pessoas"
+                    min="1"
+                    max="20"
+                    value="2"
+                >
+
+            </div>
+
+            <div class="buttons">
+
+                <button class="btn btn-secondary" onclick="prevStep()">
+                    ← Voltar
+                </button>
+
+                <button class="btn btn-primary" onclick="nextStep()">
+                    Continuar →
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- STEP 4 -->
+
+        <div class="step" data-step="4">
+
+            <div class="step-number">04 / 05</div>
+
+            <h3>O que você já possui?</h3>
+
+            <p class="step-description">
+                Marque os itens que você não precisa comprar agora.
+            </p>
+
+            <div class="checkbox-grid">
+
+                <label class="check-item">
+                    <input type="checkbox" value="jogos">
+                    Jogos de cama
+                </label>
+
+                <label class="check-item">
+                    <input type="checkbox" value="toalhas">
+                    Toalhas
+                </label>
+
+                <label class="check-item">
+                    <input type="checkbox" value="fronhas">
+                    Fronhas
+                </label>
+
+                <label class="check-item">
+                    <input type="checkbox" value="edredom">
+                    Edredom
+                </label>
+
+                <label class="check-item">
+                    <input type="checkbox" value="cobertor">
+                    Cobertor
+                </label>
+
+                <label class="check-item">
+                    <input type="checkbox" value="panos">
+                    Panos de prato
+                </label>
+
+                <label class="check-item">
+                    <input type="checkbox" value="mesa">
+                    Toalhas de mesa
+                </label>
+
+                <label class="check-item">
+                    <input type="checkbox" value="piso">
+                    Toalhas de piso
+                </label>
+
+            </div>
+
+            <div class="buttons">
+
+                <button class="btn btn-secondary" onclick="prevStep()">
+                    ← Voltar
+                </button>
+
+                <button class="btn btn-primary" onclick="nextStep()">
+                    Continuar →
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- STEP 5 -->
+
+        <div class="step" data-step="5">
+
+            <div class="step-number">05 / 05</div>
+
+            <h3>Quanto você pretende investir?</h3>
+
+            <p class="step-description">
+                A consultora poderá adaptar suas prioridades ao seu orçamento.
+            </p>
+
+            <div class="options">
+
+                <div class="option">
+                    <input type="radio" name="orcamento" id="b1" value="Até R$300">
+                    <label for="b1">
+                        <div class="option-icon">🌷</div>
+                        <div class="option-title">Até R$300</div>
+                        <div class="option-subtitle">Começar pelo essencial</div>
+                    </label>
+                </div>
+
+                <div class="option">
+                    <input type="radio" name="orcamento" id="b2" value="R$300 a R$600">
+                    <label for="b2">
+                        <div class="option-icon">💗</div>
+                        <div class="option-title">R$300 a R$600</div>
+                        <div class="option-subtitle">Essencial + conforto</div>
+                    </label>
+                </div>
+
+                <div class="option">
+                    <input type="radio" name="orcamento" id="b3" value="R$600 a R$1.000">
+                    <label for="b3">
+                        <div class="option-icon">✨</div>
+                        <div class="option-title">R$600 a R$1.000</div>
+                        <div class="option-subtitle">Enxoval mais completo</div>
+                    </label>
+                </div>
+
+                <div class="option">
+                    <input type="radio" name="orcamento" id="b4" value="Acima de R$1.000">
+                    <label for="b4">
+                        <div class="option-icon">👑</div>
+                        <div class="option-title">Acima de R$1.000</div>
+                        <div class="option-subtitle">Completo e personalizado</div>
+                    </label>
+                </div>
+
+            </div>
+
+            <div class="buttons">
+
+                <button class="btn btn-secondary" onclick="prevStep()">
+                    ← Voltar
+                </button>
+
+                <button class="btn btn-primary" onclick="gerarResultado()">
+                    ✨ Montar meu enxoval
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================
+     RESULTADO
+======================================= -->
+
+<section id="resultado" class="section">
+
+    <div class="result-header">
+
+        <h2 id="resultadoTitulo">
+            Seu enxoval personalizado 💗
+        </h2>
+
+        <p>
+            Uma sugestão inicial baseada nas informações que você forneceu.
+        </p>
+
+    </div>
+
+    <div class="summary">
+
+        <div class="summary-card">
+            <span>Cliente</span>
+            <strong id="resNome">—</strong>
+        </div>
+
+        <div class="summary-card">
+            <span>Cama</span>
+            <strong id="resCama">—</strong>
+        </div>
+
+        <div class="summary-card">
+            <span>Pessoas</span>
+            <strong id="resPessoas">—</strong>
+        </div>
+
+        <div class="summary-card">
+            <span>Orçamento</span>
+            <strong id="resOrcamento">—</strong>
+        </div>
+
+    </div>
+
+    <div class="recommendation-level">
+
+        <button class="level active" onclick="alterarNivel('essencial', this)">
+            🌷 Essencial
+        </button>
+
+        <button class="level" onclick="alterarNivel('confortavel', this)">
+            💗 Confortável
+        </button>
+
+        <button class="level" onclick="alterarNivel('completo', this)">
+            👑 Completo
+        </button>
+
+    </div>
+
+    <div id="listaResultado"></div>
+
+    <div class="priority-box">
+
+        <h3>💡 Ordem de prioridade</h3>
+
+        <div class="priority">
+            <div class="priority-number">1</div>
+            <div>
+                <strong>Itens essenciais</strong>
+                <small class="item-note">
+                    Comece pelo que será usado todos os dias.
+                </small>
+            </div>
+        </div>
+
+        <div class="priority">
+            <div class="priority-number">2</div>
+            <div>
+                <strong>Reposição e conforto</strong>
+                <small class="item-note">
+                    Depois, aumente as quantidades para facilitar a rotina.
+                </small>
+            </div>
+        </div>
+
+        <div class="priority">
+            <div class="priority-number">3</div>
+            <div>
+                <strong>Decoração e extras</strong>
+                <small class="item-note">
+                    Deixe os itens não essenciais para o final.
+                </small>
+            </div>
+        </div>
+
+    </div>
+
+    <button class="btn btn-green whatsapp" onclick="abrirWhatsApp()">
+        💬 Quero falar com a consultora
+    </button>
+
+</section>
+
+
+<!-- ======================================
+     CONFIGURAÇÕES
+======================================= -->
+
+<section id="config" class="section">
+
+    <div class="section-title">
+
+        <small>Área da consultora</small>
+
+        <h2>Configurações do enxoval</h2>
+
+        <p>
+            Aqui a Mah poderá definir as quantidades usadas nas recomendações.
+        </p>
+
+    </div>
+
+    <div class="info-box">
+        💡 <strong>Importante:</strong> estes números são apenas exemplos
+        para demonstração. A lógica definitiva deve ser definida pela
+        consultora antes da utilização comercial do sistema.
+    </div>
+
+
+    <div class="settings-card">
+
+        <h3>🛏️ Cama</h3>
+
+        <p>Quantidade recomendada de jogos de cama.</p>
+
+        <div class="setting-row">
+            <span>Solteiro</span>
+            <input type="number" id="cfgSolteiro" value="3">
+        </div>
+
+        <div class="setting-row">
+            <span>Casal</span>
+            <input type="number" id="cfgCasal" value="3">
+        </div>
+
+        <div class="setting-row">
+            <span>Queen</span>
+            <input type="number" id="cfgQueen" value="3">
+        </div>
+
+        <div class="setting-row">
+            <span>King</span>
+            <input type="number" id="cfgKing" value="3">
+        </div>
+
+    </div>
+
+
+    <div class="settings-card">
+
+        <h3>🚿 Banho</h3>
+
+        <p>Quantidade base por pessoa.</p>
+
+        <div class="setting-row">
+            <span>Toalhas de banho por pessoa</span>
+            <input type="number" id="cfgBanho" value="2">
+        </div>
+
+        <div class="setting-row">
+            <span>Toalhas de rosto por pessoa</span>
+            <input type="number" id="cfgRosto" value="2">
+        </div>
+
+        <div class="setting-row">
+            <span>Toalhas de piso</span>
+            <input type="number" id="cfgPiso" value="2">
+        </div>
+
+    </div>
+
+
+    <div class="settings-card">
+
+        <h3>🍽️ Mesa & Cozinha</h3>
+
+        <p>Quantidade recomendada para começar.</p>
+
+        <div class="setting-row">
+            <span>Panos de prato</span>
+            <input type="number" id="cfgPanos" value="6">
+        </div>
+
+        <div class="setting-row">
+            <span>Toalhas de mesa</span>
+            <input type="number" id="cfgMesa" value="2">
+        </div>
+
+    </div>
+
+
+    <div class="settings-card">
+
+        <h3>🛌 Extras</h3>
+
+        <div class="setting-row">
+            <span>Edredom</span>
+            <input type="number" id="cfgEdredom" value="1">
+        </div>
+
+        <div class="setting-row">
+            <span>Cobertor</span>
+            <input type="number" id="cfgCobertor" value="1">
+        </div>
+
+        <div class="setting-row">
+            <span>Fronhas extras</span>
+            <input type="number" id="cfgFronhas" value="4">
+        </div>
+
+    </div>
+
+    <button class="btn btn-primary" onclick="salvarConfiguracoes()">
+        💾 Salvar configurações
+    </button>
+
+</section>
+
+</main>
+
+<footer>
+    <strong>Mah Enxoval e Decoração</strong> · Consultoria personalizada
+</footer>
+
+
+<script>
+
+/* ==========================================
+   CONFIGURAÇÕES INICIAIS
+========================================== */
+
+let config = {
+
+    solteiro: 3,
+    casal: 3,
+    queen: 3,
+    king: 3,
+
+    banho: 2,
+    rosto: 2,
+    piso: 2,
+
+    panos: 6,
+    mesa: 2,
+
+    edredom: 1,
+    cobertor: 1,
+    fronhas: 4
+};
+
+
+/* ==========================================
+   NAVEGAÇÃO
+========================================== */
+
+function showSection(id, button) {
+
+    document.querySelectorAll('.section')
+        .forEach(section => section.classList.remove('active'));
+
+    document.getElementById(id).classList.add('active');
+
+    document.querySelectorAll('.nav button')
+        .forEach(btn => btn.classList.remove('active'));
+
+    if (button) {
+        button.classList.add('active');
+    }
+
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+
+/* ==========================================
+   FORMULÁRIO
+========================================== */
+
+let currentStep = 1;
+
+function updateStep() {
+
+    document.querySelectorAll('.step')
+        .forEach(step => step.classList.remove('active'));
+
+    document
+        .querySelector(`[data-step="${currentStep}"]`)
+        .classList.add('active');
+
+    document.getElementById('progress').style.width =
+        (currentStep / 5 * 100) + '%';
+}
+
+
+function nextStep() {
+
+    if (currentStep === 1) {
+
+        const nome = document.getElementById('nome').value.trim();
+
+        if (!nome) {
+            alert('Digite seu nome para continuar.');
+            return;
+        }
+    }
+
+    if (currentStep === 2) {
+
+        if (!document.querySelector('input[name="objetivo"]:checked')) {
+            alert('Escolha uma opção para continuar.');
+            return;
+        }
+    }
+
+    currentStep++;
+
+    if (currentStep > 5) {
+        currentStep = 5;
+    }
+
+    updateStep();
+}
+
+
+function prevStep() {
+
+    currentStep--;
+
+    if (currentStep < 1) {
+        currentStep = 1;
+    }
+
+    updateStep();
+}
+
+
+/* ==========================================
+   CONFIGURAÇÕES
+========================================== */
+
+function salvarConfiguracoes() {
+
+    config.solteiro =
+        Number(document.getElementById('cfgSolteiro').value);
+
+    config.casal =
+        Number(document.getElementById('cfgCasal').value);
+
+    config.queen =
+        Number(document.getElementById('cfgQueen').value);
+
+    config.king =
+        Number(document.getElementById('cfgKing').value);
+
+    config.banho =
+        Number(document.getElementById('cfgBanho').value);
+
+    config.rosto =
+        Number(document.getElementById('cfgRosto').value);
+
+    config.piso =
+        Number(document.getElementById('cfgPiso').value);
+
+    config.panos =
+        Number(document.getElementById('cfgPanos').value);
+
+    config.mesa =
+        Number(document.getElementById('cfgMesa').value);
+
+    config.edredom =
+        Number(document.getElementById('cfgEdredom').value);
+
+    config.cobertor =
+        Number(document.getElementById('cfgCobertor').value);
+
+    config.fronhas =
+        Number(document.getElementById('cfgFronhas').value);
+
+    localStorage.setItem(
+        'mahEnxovalConfig',
+        JSON.stringify(config)
+    );
+
+    alert('Configurações salvas com sucesso! 💗');
+}
+
+
+function carregarConfiguracoes() {
+
+    const salvo =
+        localStorage.getItem('mahEnxovalConfig');
+
+    if (!salvo) return;
+
+    config = JSON.parse(salvo);
+
+    document.getElementById('cfgSolteiro').value = config.solteiro;
+    document.getElementById('cfgCasal').value = config.casal;
+    document.getElementById('cfgQueen').value = config.queen;
+    document.getElementById('cfgKing').value = config.king;
+
+    document.getElementById('cfgBanho').value = config.banho;
+    document.getElementById('cfgRosto').value = config.rosto;
+    document.getElementById('cfgPiso').value = config.piso;
+
+    document.getElementById('cfgPanos').value = config.panos;
+    document.getElementById('cfgMesa').value = config.mesa;
+
+    document.getElementById('cfgEdredom').value = config.edredom;
+    document.getElementById('cfgCobertor').value = config.cobertor;
+    document.getElementById('cfgFronhas').value = config.fronhas;
+}
+
+
+/* ==========================================
+   DADOS DA CONSULTORIA
+========================================== */
+
+let dadosCliente = {};
+
+function gerarResultado() {
+
+    const nome =
+        document.getElementById('nome').value.trim();
+
+    const cama =
+        document.getElementById('cama').value;
+
+    const pessoas =
+        Number(document.getElementById('pessoas').value);
+
+    const orcamento =
+        document.querySelector('input[name="orcamento"]:checked');
+
+    if (!orcamento) {
+        alert('Escolha uma faixa de orçamento.');
+        return;
+    }
+
+    dadosCliente = {
+
+        nome: nome,
+        cama: cama,
+        pessoas: pessoas,
+        orcamento: orcamento.value
+
+    };
+
+    document.getElementById('resNome').textContent =
+        nome;
+
+    document.getElementById('resCama').textContent =
+        cama;
+
+    document.getElementById('resPessoas').textContent =
+        pessoas;
+
+    document.getElementById('resOrcamento').textContent =
+        orcamento.value;
+
+    montarLista('essencial');
+
+    showSection(
+        'resultado',
+        document.querySelectorAll('.nav button')[1]
+    );
+}
+
+
+/* ==========================================
+   GERADOR DO ENXOVAL
+========================================== */
+
+function montarLista(nivel) {
+
+    const pessoas = dadosCliente.pessoas || 2;
+
+    let jogos;
+
+    if (dadosCliente.cama === 'Solteiro') {
+        jogos = config.solteiro;
+    }
+
+    if (dadosCliente.cama === 'Casal') {
+        jogos = config.casal;
+    }
+
+    if (dadosCliente.cama === 'Queen') {
+        jogos = config.queen;
+    }
+
+    if (dadosCliente.cama === 'King') {
+        jogos = config.king;
+    }
+
+
+    let multiplicador = 1;
+
+    if (nivel === 'confortavel') {
+        multiplicador = 1.25;
+    }
+
+    if (nivel === 'completo') {
+        multiplicador = 1.5;
+    }
+
+
+    jogos = Math.ceil(jogos * multiplicador);
+
+    let banho =
+        Math.ceil(config.banho * pessoas * multiplicador);
+
+    let rosto =
+        Math.ceil(config.rosto * pessoas * multiplicador);
+
+    let piso =
+        Math.ceil(config.piso * multiplicador);
+
+    let panos =
+        Math.ceil(config.panos * multiplicador);
+
+    let mesa =
+        Math.ceil(config.mesa * multiplicador);
+
+    let edredom =
+        nivel === 'essencial'
+            ? 1
+            : nivel === 'confortavel'
+                ? 1
+                : 2;
+
+    let cobertor =
+        nivel === 'completo'
+            ? Math.max(2, config.cobertor)
+            : config.cobertor;
+
+    let fronhas =
+        Math.ceil(config.fronhas * multiplicador);
+
+
+    const itensJaTem = [
+        ...document.querySelectorAll(
+            '.checkbox-grid input:checked'
+        )
+    ].map(input => input.value);
+
+
+    let html = '';
+
+
+    /* CAMA */
+
+    html += criarCategoria(
+        '🛏️',
+        'Cama',
+        [
+            {
+                nome: 'Jogos de cama',
+                qtd: jogos,
+                chave: 'jogos',
+                obs: 'Considerando o tamanho da cama informado.'
+            },
+            {
+                nome: 'Fronhas extras',
+                qtd: fronhas,
+                chave: 'fronhas',
+                obs: 'Para ter peças de reposição.'
+            },
+            {
+                nome: 'Edredom',
+                qtd: edredom,
+                chave: 'edredom',
+                obs: 'Escolha o tamanho correspondente à sua cama.'
+            },
+            {
+                nome: 'Cobertor / manta',
+                qtd: cobertor,
+                chave: 'cobertor',
+                obs: 'A quantidade pode variar conforme o clima.'
+            }
+        ],
+        itensJaTem
+    );
+
+
+    /* BANHO */
+
+    html += criarCategoria(
+        '🚿',
+        'Banho',
+        [
+            {
+                nome: 'Toalhas de banho',
+                qtd: banho,
+                chave: 'toalhas',
+                obs: 'Quantidade calculada por pessoa.'
+            },
+            {
+                nome: 'Toalhas de rosto',
+                qtd: rosto,
+                chave: 'toalhas',
+                obs: 'Quantidade calculada por pessoa.'
+            },
+            {
+                nome: 'Toalhas de piso',
+                qtd: piso,
+                chave: 'piso',
+                obs: 'Para manter uma peça disponível para troca.'
+            }
+        ],
+        itensJaTem
+    );
+
+
+    /* MESA */
+
+    html += criarCategoria(
+        '🍽️',
+        'Mesa',
+        [
+            {
+                nome: 'Toalhas de mesa',
+                qtd: mesa,
+                chave: 'mesa',
+                obs: 'Quantidade inicial sugerida.'
+            }
+        ],
+        itensJaTem
+    );
+
+
+    /* COZINHA */
+
+    html += criarCategoria(
+        '🍳',
+        'Cozinha',
+        [
+            {
+                nome: 'Panos de prato',
+                qtd: panos,
+                chave: 'panos',
+                obs: 'Para manter peças limpas disponíveis.'
+            }
+        ],
+        itensJaTem
+    );
+
+
+    document.getElementById('listaResultado').innerHTML = html;
+}
+
+
+function criarCategoria(icone, nome, itens, possui) {
+
+    let html = `
+
+        <div class="category">
+
+            <div class="category-header">
+
+                <h3>${nome}</h3>
+
+                <span>${icone}</span>
+
+            </div>
+
+            <div class="items">
+    `;
+
+
+    itens.forEach(item => {
+
+        const jaPossui =
+            possui.includes(item.chave);
+
+        if (jaPossui) {
+
+            html += `
+
+                <div class="item">
+
+                    <div class="item-left">
+
+                        <div class="item-check">✓</div>
+
+                        <div>
+
+                            <div class="item-name">
+                                ${item.nome}
+                            </div>
+
+                            <small class="item-note">
+                                Você informou que já possui.
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                    <div class="quantity">
+                        Já possui
+                    </div>
+
+                </div>
+
+            `;
+
+        } else {
+
+            html += `
+
+                <div class="item">
+
+                    <div class="item-left">
+
+                        <div class="item-check">
+                            +
+                        </div>
+
+                        <div>
+
+                            <div class="item-name">
+                                ${item.nome}
+                            </div>
+
+                            <small class="item-note">
+                                ${item.obs}
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                    <div class="quantity">
+                        ${item.qtd} un.
+                    </div>
+
+                </div>
+
+            `;
+
+        }
+
+    });
+
+
+    html += `
+
+            </div>
+
+        </div>
+
+    `;
+
+    return html;
+}
+
+
+/* ==========================================
+   NÍVEIS
+========================================== */
+
+function alterarNivel(nivel, button) {
+
+    document.querySelectorAll('.level')
+        .forEach(btn => btn.classList.remove('active'));
+
+    button.classList.add('active');
+
+    montarLista(nivel);
+}
+
+
+/* ==========================================
+   WHATSAPP
+========================================== */
+
+function abrirWhatsApp() {
+
+    const nome = dadosCliente.nome || 'cliente';
+
+    const cama = dadosCliente.cama || '';
+
+    const mensagem =
+        `Olá, Mah! 💗 Meu nome é ${nome}. ` +
+        `Fiz minha consultoria de enxoval pelo sistema e ` +
+        `gostaria de conversar sobre os produtos. ` +
+        `Minha cama é ${cama}.`;
+
+    /*
+       TROQUE PELO NÚMERO DA CLIENTE.
+
+       Exemplo:
+       5511999999999
+    */
+
+    const numero =
+        '5511999999999';
+
+    const url =
+        `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+
+    window.open(url, '_blank');
+}
+
+
+/* ==========================================
+   INICIALIZAÇÃO
+========================================== */
+
+carregarConfiguracoes();
+
+</script>
+
+</body>
+</html>
